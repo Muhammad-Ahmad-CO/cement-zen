@@ -188,17 +188,18 @@ function Hero() {
       className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background pt-24"
     >
       {/* floating stones */}
-      <img
-        src={stonesAsset.url}
-        alt=""
+      <div
         aria-hidden
-        className={`pointer-events-none absolute right-[-6%] top-1/2 z-0 hidden w-[46vw] max-w-[620px] -translate-y-1/2 select-none transition-all duration-700 ease-out md:block ${
-          stonesVisible
-            ? "translate-x-0 opacity-90"
-            : "translate-x-16 opacity-0"
+        className={`pointer-events-none absolute right-[-6%] top-1/2 z-0 hidden -translate-y-1/2 select-none transition-all duration-700 ease-out md:block ${
+          stonesVisible ? "translate-x-0 opacity-90" : "translate-x-20 opacity-0"
         }`}
-        style={{ animation: "stones-float 9s ease-in-out infinite" }}
-      />
+      >
+        <img
+          src={stonesAsset.url}
+          alt=""
+          className="stones-float w-[46vw] max-w-[620px]"
+        />
+      </div>
       {/* faded background lattice */}
       <div
         aria-hidden
