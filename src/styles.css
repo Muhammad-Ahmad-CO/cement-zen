@@ -219,6 +219,11 @@
 }
 .spin-slow { animation: spin-slow 120s linear infinite; }
 
+@keyframes stones-float {
+  0%, 100% { transform: translateY(-50%) translateY(0) rotate(0deg); }
+  50% { transform: translateY(-50%) translateY(-18px) rotate(2deg); }
+}
+
 @layer base {
   ::selection {
     background-color: var(--accent);
