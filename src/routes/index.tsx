@@ -12,6 +12,7 @@ import {
   Mail,
 } from "lucide-react";
 import stonesAsset from "@/assets/floating-stones.png.asset.json";
+import stonesBounce from "@/assets/stones-bounce.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -190,7 +191,7 @@ function Hero() {
       {/* floating stones */}
       <div
         aria-hidden
-        className={`pointer-events-none absolute right-[-8%] top-1/2 z-30 hidden -translate-y-1/2 select-none transition-all duration-700 ease-out lg:block ${
+        className={`pointer-events-none absolute right-[-3%] top-1/2 z-30 hidden -translate-y-1/2 select-none transition-all duration-700 ease-out lg:block ${
           stonesVisible ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
         }`}
       >
@@ -665,8 +666,30 @@ function Team() {
 
 /* ---------- CTA ---------- */
 function CTA() {
+  const ref = useRef<HTMLElement | null>(null);
+  const [shown, setShown] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([e]) => setShown(e.isIntersecting),
+      { threshold: 0.3 },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
   return (
-    <section id="contact" className="bg-background pb-10">
+    <section ref={ref} id="contact" className="relative overflow-hidden bg-background pb-10">
+      <div
+        aria-hidden
+        className={`pointer-events-none absolute inset-x-0 bottom-0 z-20 select-none transition-all duration-[900ms] ease-out ${
+          shown
+            ? "translate-y-0 opacity-100 stones-bounce"
+            : "translate-y-40 opacity-0"
+        }`}
+      >
+        <img src={stonesBounce.url} alt="" className="w-full" />
+      </div>
       <div className="mx-5 rounded-[20px] bg-primary px-6 py-20 md:mx-10 md:py-[100px]">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-balance text-[36px] font-semibold leading-[1.1] tracking-[-0.025em] text-primary-foreground md:text-[48px]">
