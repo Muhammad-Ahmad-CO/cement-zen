@@ -190,8 +190,8 @@ function Hero() {
       {/* floating stones */}
       <div
         aria-hidden
-        className={`pointer-events-none absolute right-[-8%] top-1/2 z-0 hidden -translate-y-1/2 select-none transition-all duration-700 ease-out lg:block ${
-          stonesVisible ? "translate-x-0 opacity-70" : "translate-x-20 opacity-0"
+        className={`pointer-events-none absolute right-[-8%] top-1/2 z-30 hidden -translate-y-1/2 select-none transition-all duration-700 ease-out lg:block ${
+          stonesVisible ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"
         }`}
       >
         <img
