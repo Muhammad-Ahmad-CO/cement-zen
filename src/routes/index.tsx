@@ -11,6 +11,7 @@ import {
   Twitter,
   Mail,
 } from "lucide-react";
+import stonesAsset from "@/assets/floating-stones.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -167,8 +168,38 @@ function Nav() {
 
 /* ---------- Hero ---------- */
 function Hero() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [stonesVisible, setStonesVisible] = useState(true);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => setStonesVisible(entry.intersectionRatio > 0.35),
+      { threshold: [0, 0.35, 0.6, 1] },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background pt-24">
+    <section
+      ref={sectionRef}
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background pt-24"
+    >
+      {/* floating stones */}
+      <div
+        aria-hidden
+        className={`pointer-events-none absolute right-[-8%] top-1/2 z-0 hidden -translate-y-1/2 select-none transition-all duration-700 ease-out lg:block ${
+          stonesVisible ? "translate-x-0 opacity-70" : "translate-x-20 opacity-0"
+        }`}
+      >
+        <img
+          src={stonesAsset.url}
+          alt=""
+          className="stones-float w-[34vw] max-w-[460px]"
+        />
+      </div>
       {/* faded background lattice */}
       <div
         aria-hidden
