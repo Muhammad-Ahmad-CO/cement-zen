@@ -231,3 +231,11 @@
     color: var(--primary);
   }
 }
+
+@keyframes stones-bounce-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+.stones-bounce {
+  animation: stones-bounce-float 5s ease-in-out infinite;
+}
