@@ -488,14 +488,14 @@ function Counter({ to, start }: { to: number; start: boolean }) {
 function Partners() {
   useReveal();
   const partners = [
-    "NorthX Climate Tech",
-    "Cemex Ventures",
-    "TITAN Group",
-    "ACCIONA",
-    "Creative Destruction Lab",
-    "UBC",
-    "Amplify Capital",
-    "Zacua Ventures",
+    { name: "NorthX Climate Tech", img: partnerNorthx },
+    { name: "Cemex Ventures", img: partnerCemex },
+    { name: "TITAN Group", img: partnerTitan },
+    { name: "ACCIONA", img: partnerAcciona },
+    { name: "Creative Destruction Lab", img: partnerCdl },
+    { name: "UBC", img: partnerUbc },
+    { name: "Amplify Capital", img: partnerAmplify },
+    { name: "Zacua Ventures", img: partnerZacua },
   ];
   return (
     <section id="partners" className="bg-background py-[100px] md:py-[120px]">
@@ -518,10 +518,25 @@ function Partners() {
         <div className="reveal mt-16 flex flex-wrap items-center justify-center gap-x-16 gap-y-10">
           {partners.map((p) => (
             <div
-              key={p}
-              className="text-[16px] font-semibold uppercase tracking-[0.08em] text-muted-foreground opacity-60 transition-all duration-300 hover:text-foreground hover:opacity-100"
+              key={p.name}
+              className="group relative text-[16px] font-semibold uppercase tracking-[0.08em] text-muted-foreground opacity-60 transition-all duration-300 hover:text-foreground hover:opacity-100"
             >
-              {p}
+              {p.name}
+              <div className="pointer-events-none absolute bottom-full left-1/2 z-30 mb-3 w-[260px] -translate-x-1/2 translate-y-2 scale-95 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100">
+                <div className="overflow-hidden rounded-xl border border-border bg-card shadow-2xl">
+                  <img
+                    src={p.img}
+                    alt={p.name}
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="h-[150px] w-full object-cover"
+                  />
+                  <div className="px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-foreground">
+                    {p.name}
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>
