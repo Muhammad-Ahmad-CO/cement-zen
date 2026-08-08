@@ -9,6 +9,10 @@ import partnerUbc from "@/assets/partner-ubc.jpg";
 import partnerAmplify from "@/assets/partner-amplify.jpg";
 import partnerZacua from "@/assets/partner-zacua.jpg";
 import curaLogo from "@/assets/cura-logo.png";
+import teamErin from "@/assets/team-erin.jpg";
+import teamPhil from "@/assets/team-phil.jpg";
+import teamSabrina from "@/assets/team-sabrina.jpg";
+import teamCurtis from "@/assets/team-curtis.jpg";
 import newsStealth from "@/assets/news-stealth.jpg";
 import newsFunding from "@/assets/news-funding.jpg";
 import newsMap from "@/assets/news-map.jpg";
@@ -113,15 +117,15 @@ function Nav() {
       }`}
     >
       <div className="container-cura flex h-[72px] items-center justify-between">
-        <a href="#" className="flex items-center gap-2">
+        <a href="#" className="group flex items-center gap-2.5">
           <img
             src={curaLogo}
             alt="CURA Climate logo"
-            width={32}
-            height={32}
-            className="h-8 w-8 object-contain"
+            width={36}
+            height={36}
+            className="h-9 w-9 object-contain transition-transform duration-500 ease-out group-hover:rotate-[60deg] group-hover:scale-110"
           />
-          <span className="text-[20px] font-semibold tracking-[0.08em] text-foreground">
+          <span className="text-[20px] font-semibold tracking-[0.08em] text-foreground transition-colors duration-300 group-hover:text-primary">
             CURA
           </span>
         </a>
@@ -655,10 +659,10 @@ function Mission() {
 function Team() {
   useReveal();
   const members = [
-    { name: "Erin Bobicki", title: "CEO" },
-    { name: "Phil De Luna", title: "CTO" },
-    { name: "Sabrina Scott", title: "COO" },
-    { name: "Curtis Berlinguette", title: "Science Advisor" },
+    { name: "Erin Bobicki", title: "CEO", img: teamErin },
+    { name: "Phil De Luna", title: "CTO", img: teamPhil },
+    { name: "Sabrina Scott", title: "COO", img: teamSabrina },
+    { name: "Curtis Berlinguette", title: "Science Advisor", img: teamCurtis },
   ];
   return (
     <section className="bg-background py-[100px] md:py-[140px]">
@@ -674,10 +678,6 @@ function Team() {
 
         <div className="mt-14 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {members.map((m, i) => {
-            const initials = m.name
-              .split(" ")
-              .map((p) => p[0])
-              .join("");
             return (
               <div
                 key={m.name}
@@ -685,9 +685,14 @@ function Team() {
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 <div className="relative h-[180px] w-[180px] overflow-hidden rounded-full bg-secondary grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0">
-                  <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#d8dcd5] to-[#9aa89c] text-[44px] font-semibold text-foreground/70">
-                    {initials}
-                  </div>
+                  <img
+                    src={m.img}
+                    alt={`${m.name}, ${m.title} at CURA Climate`}
+                    loading="lazy"
+                    width={180}
+                    height={180}
+                    className="h-full w-full object-cover"
+                  />
                 </div>
                 <div className="mt-5 text-[20px] font-semibold text-foreground">
                   {m.name}
@@ -768,8 +773,15 @@ function Footer() {
       <div className="container-cura">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2">
-              <span className="inline-block h-5 w-5 rotate-45 border border-primary bg-primary/30" />
+            <div className="group flex items-center gap-2.5">
+              <img
+                src={curaLogo}
+                alt="CURA Climate logo"
+                loading="lazy"
+                width={32}
+                height={32}
+                className="h-8 w-8 object-contain transition-transform duration-500 ease-out group-hover:rotate-[60deg]"
+              />
               <span className="text-[20px] font-semibold tracking-[0.08em]">
                 CURA
               </span>
