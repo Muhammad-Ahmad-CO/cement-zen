@@ -1,5 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
+import partnerNorthx from "@/assets/partner-northx.jpg";
+import partnerCemex from "@/assets/partner-cemex.jpg";
+import partnerTitan from "@/assets/partner-titan.jpg";
+import partnerAcciona from "@/assets/partner-acciona.jpg";
+import partnerCdl from "@/assets/partner-cdl.jpg";
+import partnerUbc from "@/assets/partner-ubc.jpg";
+import partnerAmplify from "@/assets/partner-amplify.jpg";
+import partnerZacua from "@/assets/partner-zacua.jpg";
 import {
   ArrowRight,
   Menu,
