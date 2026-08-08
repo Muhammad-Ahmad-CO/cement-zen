@@ -8,6 +8,10 @@ import partnerCdl from "@/assets/partner-cdl.jpg";
 import partnerUbc from "@/assets/partner-ubc.jpg";
 import partnerAmplify from "@/assets/partner-amplify.jpg";
 import partnerZacua from "@/assets/partner-zacua.jpg";
+import curaLogo from "@/assets/cura-logo.png";
+import newsStealth from "@/assets/news-stealth.jpg";
+import newsFunding from "@/assets/news-funding.jpg";
+import newsMap from "@/assets/news-map.jpg";
 import {
   ArrowRight,
   Menu,
@@ -110,7 +114,13 @@ function Nav() {
     >
       <div className="container-cura flex h-[72px] items-center justify-between">
         <a href="#" className="flex items-center gap-2">
-          <span className="inline-block h-5 w-5 rotate-45 border border-primary bg-primary/20" />
+          <img
+            src={curaLogo}
+            alt="CURA Climate logo"
+            width={32}
+            height={32}
+            className="h-8 w-8 object-contain"
+          />
           <span className="text-[20px] font-semibold tracking-[0.08em] text-foreground">
             CURA
           </span>
@@ -561,14 +571,17 @@ function Press() {
       date: "November 2025",
       title:
         "CURA Emerges from Stealth with Breakthrough Tech to Slash Cement Emissions",
+      image: newsStealth,
     },
     {
       date: "November 2025",
       title: "CURA Awarded Non-Dilutive Funds from NorthX Climate Tech",
+      image: newsFunding,
     },
     {
       date: "2026",
       title: "CURA Named to Cemex Ventures Cleantech Construction Map 2026",
+      image: newsMap,
     },
   ];
   return (
@@ -592,9 +605,13 @@ function Press() {
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               <div className="aspect-[16/9] overflow-hidden bg-border">
-                <div
-                  className="h-full w-full bg-gradient-to-br from-[#cfd4ce] to-[#9aa89c] transition-transform duration-500 group-hover:scale-[1.03]"
-                  aria-hidden
+                <img
+                  src={it.image}
+                  alt={it.title}
+                  loading="lazy"
+                  width={1280}
+                  height={720}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
               </div>
               <div className="p-7">
