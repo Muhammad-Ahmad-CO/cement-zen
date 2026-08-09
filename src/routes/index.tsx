@@ -214,7 +214,7 @@ function Hero() {
       {/* factory with smoke */}
       <div
         aria-hidden
-        className="pointer-events-none absolute bottom-[6%] left-[-4%] z-30 hidden w-[38vw] max-w-[520px] select-none lg:block"
+        className="pointer-events-none absolute bottom-[4%] left-[-3%] z-30 hidden w-[42vw] max-w-[560px] select-none lg:block"
       >
         <div className="relative">
           <img src={factoryAsset.url} alt="" className="w-full" />
