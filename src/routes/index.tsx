@@ -487,6 +487,9 @@ function ValueProps() {
 function Stats() {
   const ref = useRef<HTMLDivElement>(null);
   const [start, setStart] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     if (!ref.current) return;
@@ -505,8 +508,25 @@ function Stats() {
   ];
 
   return (
-    <section ref={ref} className="bg-[var(--dark)] py-[100px] md:py-[120px]">
-      <div className="container-cura">
+    <section
+      ref={ref}
+      className="relative overflow-hidden bg-[var(--dark)] py-[100px] md:py-[120px]"
+    >
+      {mounted && start && (
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+          <div className="aspect-square h-[160%] max-h-none opacity-70">
+            <StatsGlobe />
+          </div>
+        </div>
+      )}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(circle at 50% 50%, rgba(26,26,26,0.15) 0%, rgba(26,26,26,0.75) 55%, var(--dark) 100%)",
+        }}
+      />
+      <div className="container-cura relative z-10">
         <div className="grid divide-y divide-white/15 md:grid-cols-3 md:divide-x md:divide-y-0">
           {stats.map((s, i) => (
             <div
