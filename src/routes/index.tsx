@@ -214,18 +214,41 @@ function Hero() {
       {/* factory with smoke */}
       <div
         aria-hidden
-        className="pointer-events-none absolute bottom-[4%] left-[-3%] z-30 hidden w-[42vw] max-w-[560px] select-none lg:block"
+        className="pointer-events-none absolute bottom-[4%] left-[-2%] z-30 hidden w-[32vw] max-w-[420px] select-none lg:block"
       >
         <div className="relative">
           <img src={factoryAsset.url} alt="" className="w-full" />
           {/* smoke emitting from the chimney */}
           <div className="absolute left-[78%] top-0 h-0 w-0">
-            {[0, 1, 2, 3, 4, 5].map((i) => (
+            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
               <span
                 key={i}
                 className="smoke-puff"
-                style={{ animationDelay: `${i * 1.2}s` }}
+                style={{ animationDelay: `${i * 0.6}s` }}
               />
+            ))}
+          </div>
+          {/* workers moving around the factory */}
+          <div className="absolute bottom-[3%] left-0 h-[10%] w-full overflow-hidden">
+            {[
+              { d: "0s", dur: "9s", s: 1 },
+              { d: "2.4s", dur: "11s", s: 0.85 },
+              { d: "5.2s", dur: "8s", s: 0.92 },
+            ].map((w, i) => (
+              <span
+                key={i}
+                className="worker"
+                style={{
+                  animationDelay: w.d,
+                  animationDuration: w.dur,
+                  transform: `scale(${w.s})`,
+                }}
+              >
+                <span className="worker-head" />
+                <span className="worker-body" />
+                <span className="worker-leg worker-leg-a" />
+                <span className="worker-leg worker-leg-b" />
+              </span>
             ))}
           </div>
         </div>
