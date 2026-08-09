@@ -29,6 +29,7 @@ import {
 } from "lucide-react";
 import stonesAsset from "@/assets/floating-stones.png.asset.json";
 import stonesBounce from "@/assets/stones-bounce.png.asset.json";
+import factoryAsset from "@/assets/factory.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -210,6 +211,26 @@ function Hero() {
       ref={sectionRef}
       className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background pt-24"
     >
+      {/* factory with smoke */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute bottom-[6%] left-[-4%] z-30 hidden w-[38vw] max-w-[520px] select-none lg:block"
+      >
+        <div className="relative">
+          <img src={factoryAsset.url} alt="" className="w-full" />
+          {/* smoke emitting from the chimney */}
+          <div className="absolute left-[78%] top-0 h-0 w-0">
+            {[0, 1, 2, 3, 4, 5].map((i) => (
+              <span
+                key={i}
+                className="smoke-puff"
+                style={{ animationDelay: `${i * 1.2}s` }}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* floating stones */}
       <div
         aria-hidden

@@ -239,3 +239,29 @@
 .stones-bounce {
   animation: stones-bounce-float 5s ease-in-out infinite;
 }
+
+@keyframes smoke-rise {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0) scale(0.4);
+  }
+  15% { opacity: 0.5; }
+  60% { opacity: 0.35; }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + 70px), -220px) scale(2.4);
+  }
+}
+
+.smoke-puff {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 35% 35%, rgba(160,160,160,0.85), rgba(190,190,190,0.35) 60%, rgba(200,200,200,0) 72%);
+  filter: blur(6px);
+  opacity: 0;
+  animation: smoke-rise 7.2s linear infinite;
+}
