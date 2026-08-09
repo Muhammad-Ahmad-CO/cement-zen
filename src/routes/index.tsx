@@ -16,6 +16,7 @@ import teamCurtis from "@/assets/team-curtis.jpg";
 import newsStealth from "@/assets/news-stealth.jpg";
 import newsFunding from "@/assets/news-funding.jpg";
 import newsMap from "@/assets/news-map.jpg";
+import StatsGlobe from "@/components/StatsGlobe";
 import {
   ArrowRight,
   Menu,
