@@ -1,76 +1,54 @@
 # Cement Zen
 
-A premium climate-tech website concept designed to communicate a serious, science-led decarbonization message for the cement industry. The experience balances technical credibility, corporate clarity, and polished visual presentation to position the brand as a modern sustainability leader in industrial innovation.
+[![TypeScript](https://img.shields.io/badge/TypeScript-95%25-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/) [![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Site-2D6A4F?logo=googlechrome&logoColor=white)](https://cement-zen.lovable.app) [![Responsive](https://img.shields.io/badge/Design-Responsive-8B5CF6)](https://github.com/Muhammad-Ahmad-CO/cement-zen)
+
+## Live Website Preview
+
+[![Open Cement Zen](https://image.thum.io/get/width/1200/crop/850/https://cement-zen.lovable.app)](https://cement-zen.lovable.app)
+
+**[Visit the live website →](https://cement-zen.lovable.app)**
 
 ## Overview
 
-Cement Zen is a polished digital experience built around the challenge of reducing emissions in one of the hardest-to-abate sectors. The site communicates a practical approach to decarbonization through strong editorial storytelling, strategic messaging, and high-trust visual design.
+Cement Zen is a premium climate-tech website concept designed to communicate a serious, science-led decarbonization message for the cement industry. The experience combines technical credibility, corporate clarity, and polished visual presentation.
 
 ## Mission and Positioning
 
-The project presents the brand as a thoughtful, technically grounded solution for reducing carbon emissions at the source of cement production. The message is framed around practicality, performance, and industrial impact, helping visitors understand the importance of the technology without sacrificing clarity or credibility.
+The project presents a technically grounded approach to reducing carbon emissions at the source of cement production. Its messaging focuses on practicality, performance, industrial impact, and stakeholder confidence.
 
 ## Core Features
 
-- Corporate landing page with strong industrial tone
-- Clear sustainability and decarbonization narrative
-- Metrics and impact-focused content blocks
-- Technical value proposition and process explanation
-- Partner and stakeholder showcase sections
-- News and press style highlights
+- Corporate landing page with industrial tone
+- Sustainability and decarbonization narrative
+- Impact metrics and technical storytelling
+- Partner and stakeholder sections
+- News and press-style highlights
 - Conversion-focused contact CTA
-- Responsive and premium UI across devices
-
-## Business Goals
-
-- Position the brand as a credible climate-tech company
-- Explain the value proposition in an accessible and professional way
-- Build trust with investors, partners, and industrial stakeholders
-- Highlight sustainability impact and market relevance
-- Create a polished digital presence for growth and engagement
+- Responsive premium UI
 
 ## Design Philosophy
 
-The interface follows an industrial-grade, premium aesthetic:
-- clean white and off-white foundations
-- disciplined green accents for clarity and focus
-- strong typography and generous spacing
-- structured content blocks for technical storytelling
-- subtle motion that supports confidence and professionalism
+Clean white and off-white foundations, disciplined green accents, strong typography, generous spacing, structured content blocks, and subtle motion create a credible climate-tech identity.
 
 ## Tech Stack
 
 - React
 - TypeScript
-- Vite or comparable frontend tooling
+- Vite
 - Tailwind CSS
-- Framer Motion or utility-based motion system
-- Modern CSS design architecture
-
-## Highlights
-
-- Premium B2B corporate presentation
-- Sustainability-first brand messaging
-- Technical storytelling with clarity and confidence
-- Suitable for climate innovation, industrial impact, and stakeholder communication
+- Framer Motion
+- Modern CSS architecture
 
 ## Getting Started
 
-### Prerequisites
-
-- Node.js
-- npm
-
-### Installation
-
 ```bash
-git clone <repository-url>
+git clone https://github.com/Muhammad-Ahmad-CO/cement-zen.git
 cd cement-zen
 npm install
 npm run dev
 ```
 
-### Production Build
+## Production Build
 
 ```bash
 npm run build
@@ -78,14 +56,7 @@ npm run build
 
 ## Deployment
 
-This project is suitable for deployment on:
-- Vercel
-- Netlify
-- enterprise static hosting platforms
-
-## Notes
-
-Cement Zen is designed to feel credible, modern, and strategically aligned with climate innovation. The project balances technical depth and strong marketing presentation to make the business story clear and compelling to a serious audience.
+Suitable for Vercel, Netlify, and enterprise static hosting platforms.
 
 ---
 
